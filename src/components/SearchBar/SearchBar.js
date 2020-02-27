@@ -11,7 +11,8 @@ function SearchBar({
       .then(res => res.json())
       .then(data => {
         setResult(data);
-      });
+      })
+      .catch(err => console.log(err));
   }, [searchTerm]);
   return (
     <div>
