@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import css from "./SearchBar.module.css";
 
 function SearchBar({
   handleEnteredSearch,
@@ -6,18 +7,16 @@ function SearchBar({
   getChosenPokemon,
   setResult
 }) {
-  useEffect(() => {
-    fetch(`http://localhost:5000/pokemon?name=${searchTerm}`)
-      .then(res => res.json())
-      .then(data => {
-        setResult(data);
-      })
-      .catch(err => console.log(err));
-  }, [searchTerm]);
   return (
     <div>
-      <input onChange={handleEnteredSearch} value={searchTerm} />
-      <button onClick={getChosenPokemon}>I Choose You!</button>
+      <input
+        className={css.input}
+        onChange={handleEnteredSearch}
+        value={searchTerm}
+      />
+      <button className={css.button} onClick={getChosenPokemon}>
+        I Choose You!
+      </button>
     </div>
   );
 }

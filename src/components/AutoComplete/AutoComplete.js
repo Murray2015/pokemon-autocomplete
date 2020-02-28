@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Option from "./Option.js";
+import css from "./AutoComplete.module.css";
 
 function AutoComplete({ searchTerm, handleEnteredSearch }) {
   const [options, setOption] = useState([""]);
@@ -14,14 +15,14 @@ function AutoComplete({ searchTerm, handleEnteredSearch }) {
   }, [searchTerm]);
 
   return (
-    <ul>
-      {options.map(option => {
+    <ul className={css.pokemonAutoCompleteList}>
+      {options.sort().map(option => {
         if (option) {
           return (
             <Option
               option={option}
               handleEnteredSearch={handleEnteredSearch}
-              //   key={option.name}
+              key={option.name}
             />
           );
         }

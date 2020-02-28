@@ -1,0 +1,19 @@
+.pokemonImg {
+  width: 30%;
+  border: 2px solid #cc0000;
+  border-radius: 10px;
+  background-color: #ff0000;
+}
+
+.pokemonH1 {
+  color: #cc0000;
+}
+
+.pokemonTextCard {
+  margin: 0 auto;
+  padding: 1em;
+  width: 40%;
+  border: 5px solid #3b4cca;
+  border-radius: 10px;
+  background-color: #ffde00;
+}
